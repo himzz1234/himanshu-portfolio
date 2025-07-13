@@ -5,6 +5,12 @@ import {
   useAnimation,
   useMotionValueEvent,
 } from "motion/react";
+import cloud7 from "../assets/images/cloud_7.png";
+import cloudLarge from "../assets/images/cloud_large.png";
+import sparkle1 from "../assets/images/sparkle_1.png";
+import sparkle2 from "../assets/images/sparkle_2.png";
+import board3 from "../assets/images/board_3.png";
+import board4 from "../assets/images/board_4.png";
 
 export default function About() {
   const ref = useRef(null);
@@ -60,28 +66,28 @@ export default function About() {
     >
       {/* Clouds */}
       <motion.img
-        src="src/assets/images/cloud_7.png"
+        src={cloud7}
         className="absolute top-[10%] left-[5%] w-24 sm:w-44 opacity-20 z-0"
         alt="cloud"
         animate={{ x: [0, 10, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
-        src="src/assets/images/cloud_7.png"
+        src={cloud7}
         className="absolute top-[20%] right-[10%] w-20 sm:w-36 opacity-25 z-0"
         alt="cloud"
         animate={{ x: [0, -15, 0] }}
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
-        src="src/assets/images/cloud_7.png"
+        src={cloud7}
         className="absolute top-[65%] left-[15%] w-16 sm:w-28 opacity-15 z-0"
         alt="cloud"
         animate={{ x: [0, 8, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
-        src="src/assets/images/cloud_7.png"
+        src={cloud7}
         className="absolute bottom-[15%] right-[8%] w-20 sm:w-32 opacity-10 z-0"
         alt="cloud"
         animate={{ x: [0, -12, 0] }}
@@ -90,7 +96,7 @@ export default function About() {
 
       <div
         style={{
-          backgroundImage: `url(src/assets/images/cloud_large.png)`,
+          backgroundImage: `url(${cloudLarge})`,
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -111,34 +117,34 @@ export default function About() {
 
       {/* Sparkles */}
       <img
-        src="/src/assets/images/sparkle_1.png"
+        src={sparkle1}
         className="w-3 sm:w-4 opacity-90 absolute top-[20%] left-[20%]"
       />
       <img
-        src="/src/assets/images/sparkle_2.png"
+        src={sparkle2}
         className="w-2.5 sm:w-3 opacity-70 absolute top-[32%] right-[28%]"
       />
       <img
-        src="/src/assets/images/sparkle_1.png"
+        src={sparkle1}
         className="w-2.5 sm:w-3 opacity-80 absolute bottom-[10%] left-[25%]"
       />
       <img
-        src="/src/assets/images/sparkle_2.png"
+        src={sparkle2}
         className="w-2 opacity-60 absolute bottom-[22%] right-[30%]"
       />
       <img
-        src="/src/assets/images/sparkle_1.png"
+        src={sparkle1}
         className="w-2.5 sm:w-3 opacity-60 absolute top-[10%] right-[12%]"
       />
       <img
-        src="/src/assets/images/sparkle_2.png"
+        src={sparkle2}
         className="w-2 opacity-50 absolute top-[45%] left-[10%]"
       />
 
       {/* Boards - Left */}
       <div className="absolute top-[50%] sm:top-80 left-1/2 sm:left-96 -translate-x-1/2 sm:translate-x-0 flex flex-col items-center z-20">
         <motion.img
-          src="src/assets/images/board_3.png"
+          src={board3}
           alt="Hanging Board"
           animate={boardControls}
           initial={{ y: "-80%" }}
@@ -168,7 +174,7 @@ export default function About() {
       {/* Boards - Right */}
       <div className="absolute top-[105%] sm:top-80 left-1/2 sm:right-96 -translate-x-1/2 sm:translate-x-0 flex flex-col items-center z-20">
         <motion.img
-          src="src/assets/images/board_4.png"
+          src={board4}
           alt="Hanging Board"
           animate={boardControls}
           initial={{ y: "-80%" }}

@@ -2,6 +2,10 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import cloud8 from "../assets/images/cloud_8.png";
+import cloud7 from "../assets/images/cloud_7.png";
+import cloudBannerLeft from "../assets/images/cloud_banner_left.png";
+import cloudBannerRight from "../assets/images/cloud_banner_right.png";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -70,9 +74,9 @@ export default function Home() {
 
       {/* Cloud Images */}
       <motion.img
-        src="src/assets/images/cloud_8.png"
+        src={cloud8}
         alt="Small cloud"
-        className="absolute top-10 right-10 w-16 sm:w-24 opacity-25 z-[2]"
+        className="absolute top-10 right-20 w-16 sm:w-24 opacity-25 z-[2]"
         animate={{ x: 10 }}
         transition={{
           duration: 6,
@@ -83,9 +87,9 @@ export default function Home() {
       />
 
       <motion.img
-        src="src/assets/images/cloud_7.png"
+        src={cloud7}
         alt="Small cloud"
-        className="absolute top-[30%] left-10 w-20 sm:w-32 opacity-30 z-[1]"
+        className="absolute top-[30%] left-40 w-20 sm:w-32 opacity-30 z-[1]"
         animate={{ x: -10 }}
         transition={{
           duration: 5,
@@ -98,7 +102,7 @@ export default function Home() {
       {/* Bottom banners */}
       <motion.div
         style={{
-          backgroundImage: `url(src/assets/images/cloud_banner_left.png)`,
+          backgroundImage: `url(${cloudBannerLeft})`,
           backgroundPosition: "bottom left",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -108,7 +112,7 @@ export default function Home() {
 
       <motion.div
         style={{
-          backgroundImage: `url(src/assets/images/cloud_banner_right.png)`,
+          backgroundImage: `url(${cloudBannerRight})`,
           backgroundPosition: "bottom right",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",

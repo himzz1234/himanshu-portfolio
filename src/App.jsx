@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import balloonImg from "./assets/images/balloon.png";
 
 export default function App() {
   const [y, setY] = useState(40);
@@ -66,7 +67,7 @@ export default function App() {
           }}
         >
           <img
-            src="src/assets/images/balloon.png"
+            src={balloonImg}
             alt="Balloon"
             className="w-28 sm:w-36 md:w-44 drop-shadow-2xl"
           />

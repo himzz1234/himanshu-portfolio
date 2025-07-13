@@ -1,5 +1,11 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import githubIcon from "../assets/icons/github.png";
+import linkedinIcon from "../assets/icons/linkedin.png";
+import instagramIcon from "../assets/icons/instagram.png";
+import cityline from "../assets/images/cityline.png";
+import grassLeft from "../assets/images/grass_banner_left.png";
+import grassRight from "../assets/images/grass_banner_right.png";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -46,22 +52,34 @@ export default function Contact() {
       {/* Social Icons */}
       <div className="flex items-center justify-center gap-3 sm:space-x-2 absolute left-20 top-[50%] sm:top-[70%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
         <div>
-          <img
-            src="/src/assets/icons/github.png"
-            className="w-7 h-7 sm:w-8 sm:h-8"
-          />
+          <a
+            href="https://github.com/himzz1234"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img src={githubIcon} alt="GitHub" className="w-6 sm:w-8" />
+          </a>
         </div>
         <div>
-          <img
-            src="/src/assets/icons/linkedin.png"
-            className="w-7 h-7 sm:w-8 sm:h-8"
-          />
+          <a
+            href="https://www.linkedin.com/in/himanshu-singh-ab19161b2"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img src={linkedinIcon} alt="LinkedIn" className="w-6 sm:w-8" />
+          </a>
         </div>
         <div>
-          <img
-            src="/src/assets/icons/instagram.png"
-            className="w-7 h-7 sm:w-8 sm:h-8"
-          />
+          <a
+            href="https://www.instagram.com/whyhimanshuwhy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img src={instagramIcon} alt="Instagram" className="w-6 sm:w-8" />
+          </a>
         </div>
       </div>
 
@@ -78,24 +96,18 @@ export default function Contact() {
       {/* Cityline */}
       <div className="absolute right-0 bottom-0 z-[1] w-full sm:w-auto">
         <img
-          src="/src/assets/images/cityline.png"
+          src={cityline}
           className="brightness-75 opacity-25 scale-x-[-1] w-[200vw] sm:w-auto"
         />
       </div>
 
       {/* Grass Banners */}
       <div className="absolute left-0 -bottom-7.5 z-10 w-full sm:w-auto">
-        <img
-          src="/src/assets/images/grass_banner_left.png"
-          className="w-full sm:w-2/3"
-        />
+        <img src={grassLeft} className="w-full sm:w-2/3" />
       </div>
 
       <div className="w-full sm:w-auto absolute right-0 -bottom-7.5 z-10">
-        <img
-          src="/src/assets/images/grass_banner_right.png"
-          className="w-full sm:w-2/3 ml-auto"
-        />
+        <img src={grassRight} className="w-full sm:w-2/3 ml-auto" />
       </div>
     </div>
   );

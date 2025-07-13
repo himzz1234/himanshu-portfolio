@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { createContext, useContext, useEffect, useState } from "react";
+import CharacterHold from "/src/assets/images/character_hold.png";
 
 const ModalContext = createContext(null);
 
@@ -56,7 +57,7 @@ export default function ModalProvider({ children }) {
                 <AnimatePresence>
                   <motion.img
                     key="character"
-                    src="/src/assets/images/character_hold.png"
+                    src={CharacterHold}
                     alt="Character"
                     className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mt-[2px] w-[80px]"
                   />
