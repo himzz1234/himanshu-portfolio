@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { createContext, useContext, useEffect, useState } from "react";
-import CharacterHold from "/src/assets/images/character_hold.png";
+import CharacterHold from "../assets/images/character_hold.png";
 
 const ModalContext = createContext(null);
 
