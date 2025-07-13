@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+.fredoka {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+}
+
+.font-body {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-heading {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+}
