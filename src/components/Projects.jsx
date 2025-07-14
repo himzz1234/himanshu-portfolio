@@ -34,7 +34,21 @@ export default function Projects() {
       <motion.div
         className="absolute top-[45%] left-[25%] sm:left-[35%] -translate-x-1/2 w-28 sm:w-44 z-10 drop-shadow-xl cursor-pointer"
         {...hoverAnimation}
-        onClick={() => openModal(<ProjectInfo />)}
+        onClick={() =>
+          openModal(
+            <ProjectInfo
+              title="SwadSathi"
+              description="A real-time food ordering app built to reduce long queues and wait times in the college canteen. Students can place and track orders live, while canteen staff manage them efficiently."
+              stack={["React", "Tailwind CSS", "Node.js", "Socket.io"]}
+              features={[
+                "Live order tracking",
+                "Admin dashboard",
+                "Mobile-first UI",
+              ]}
+              githubLink="https://github.com/himzz1234/SwadSathi"
+            />
+          )
+        }
       >
         <FloatingBalloon src={balloon12} />
       </motion.div>
@@ -42,7 +56,29 @@ export default function Projects() {
       <motion.div
         className="absolute top-[15%] left-[20%] sm:left-[20%] -translate-x-1/2 w-24 sm:w-32 z-10 drop-shadow-xl cursor-pointer"
         {...hoverAnimation}
-        onClick={() => openModal(<ProjectInfo />)}
+        onClick={() =>
+          openModal(
+            <ProjectInfo
+              title="Connect"
+              description="A real-time MERN stack-based social media platform with messaging, post creation, and user interaction features."
+              stack={[
+                "React.js",
+                "Express.js",
+                "Node.js",
+                "MongoDB",
+                "Socket.io",
+              ]}
+              features={[
+                "Real-time messaging",
+                "User auth & post creation APIs",
+                "100+ active users in 3 months",
+                "Highly scalable architecture",
+              ]}
+              githubLink="https://github.com/himzz1234/Connect"
+              demoLink="https://connect-nine-coral.vercel.app"
+            />
+          )
+        }
       >
         <FloatingBalloon src={balloon14} />
       </motion.div>
@@ -50,7 +86,21 @@ export default function Projects() {
       <motion.div
         className="absolute top-[20%] right-[20%] sm:right-[30%] translate-x-1/2 w-28 sm:w-40 z-10 drop-shadow-xl cursor-pointer"
         {...hoverAnimation}
-        onClick={() => openModal(<ProjectInfo />)}
+        onClick={() =>
+          openModal(
+            <ProjectInfo
+              title="Sneakpeek"
+              description="A sneaker price comparison platform that scrapes and matches sneaker listings from multiple e-commerce websites to help users find the best deal."
+              stack={["Puppeteer", "Cheerio", "Node.js", "Next.js", "MongoDB"]}
+              features={[
+                "Web scraping with delay/throttling",
+                "Cross-site price comparison",
+                "Product tracking & alert system",
+              ]}
+              githubLink="https://github.com/himzz1234/SneakPeek"
+            />
+          )
+        }
       >
         <FloatingBalloon src={balloon13} />
       </motion.div>
