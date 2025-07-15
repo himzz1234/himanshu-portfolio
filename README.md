@@ -7,8 +7,7 @@ Welcome to my personal developer portfolio, a skybound journey through interacti
 - **React** (with Vite)
 - **TailwindCSS** for styling
 - **Framer Motion** for animations
-- **TypeScript** (optional)
-- **GitHub Pages** (for hosting)
+- **Vercel** (for hosting)
 
 ---
 
@@ -27,6 +26,6 @@ Welcome to my personal developer portfolio, a skybound journey through interacti
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/himzz1234/himanshu-portfolio.git
+cd himanshu-portfolio
 ```
