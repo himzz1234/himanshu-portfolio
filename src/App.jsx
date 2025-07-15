@@ -74,17 +74,17 @@ export default function App() {
         </motion.div>
       </motion.div>
 
-      <section className="min-h-screen bg-gradient-to-b from-sky-200 to-sky-400 relative">
+      <section className="min-h-screen bg-gradient-to-b from-[#4db8ff] via-[#89d4ff] to-[#b3dfff] relative">
         <Home />
       </section>
-      <section className="min-h-screen bg-gradient-to-b from-sky-400 to-indigo-200 relative">
-        <About scrollY={scrollY} />
+      <section className="min-h-screen bg-gradient-to-b from-[#b3dfff] via-[#d6edff] to-[#eaf6ff] relative">
+        <About />
       </section>
-      <section className="min-h-screen bg-gradient-to-b from-indigo-200 to-slate-300 relative">
+      <section className="min-h-screen bg-gradient-to-b from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc] relative">
         <Projects />
       </section>
       <section
-        className="min-h-screen bg-gradient-to-b from-slate-300 to-rose-100 relative"
+        className="min-h-screen bg-gradient-to-b from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9] relative"
         ref={contactRef}
       >
         <Contact />

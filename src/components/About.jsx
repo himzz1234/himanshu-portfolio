@@ -103,11 +103,11 @@ export default function About() {
         }}
         className="absolute -top-36 z-30 w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6"
       >
-        <h2 className="text-xl sm:text-5xl mt-6 font-semibold text-[#38477e] drop-shadow-sm">
+        <h2 className="text-xl sm:text-5xl mt-6 font-semibold text-[#6b9ac4] drop-shadow-sm">
           Hi, I'm Himanshu!
         </h2>
 
-        <p className="mt-4 text-sm sm:text-xl text-[#38477e] leading-relaxed max-w-sm sm:max-w-xl px-2 sm:px-0">
+        <p className="mt-4 text-sm sm:text-xl text-[#6b9ac4] leading-relaxed max-w-sm sm:max-w-xl px-2 sm:px-0">
           A skybound developer crafting{" "}
           <span className="font-semibold">playful, real-time</span> experiences
           with a touch of storytelling. I turn imaginative ideas into meaningful
@@ -147,7 +147,7 @@ export default function About() {
           src={board3}
           alt="Hanging Board"
           animate={boardControls}
-          initial={{ y: "-80%" }}
+          initial={{ y: "-85%" }}
           className="w-48 sm:w-60 h-auto drop-shadow-xl"
         />
 
@@ -161,7 +161,7 @@ export default function About() {
               key={i}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className={`bg-[#f0f8ff] flex items-center justify-center rounded-md px-3 py-2 text-sm ${
+              className={`bg-[#fafafa] text-[#276490] flex items-center justify-center rounded-md px-3 py-2 text-sm ${
                 i === 3 ? "col-span-2 sm:col-span-1 sm:col-start-2" : ""
               }`}
             >
@@ -177,7 +177,7 @@ export default function About() {
           src={board4}
           alt="Hanging Board"
           animate={boardControls}
-          initial={{ y: "-80%" }}
+          initial={{ y: "-85%" }}
           className="w-48 sm:w-60 h-auto drop-shadow-xl"
         />
 
@@ -191,7 +191,7 @@ export default function About() {
               key={i}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-[#ecf5fd] flex items-center justify-center rounded-md px-3 py-2 text-sm"
+              className="bg-[#fafafa] flex items-center justify-center rounded-md px-3 py-2 text-sm"
             >
               <p>{tech}</p>
             </motion.div>

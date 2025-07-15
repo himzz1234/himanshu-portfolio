@@ -14,12 +14,12 @@ export default function Contact() {
   return (
     <div
       ref={ref}
-      className="relative w-full font-sans h-screen bg-gradient-to-b from-slate-300 via-[#f7d4c4] to-[#f9e4dc] overflow-hidden flex items-center justify-center pb-24"
+      className="relative w-full font-sans h-screen bg-gradient-to-b from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9] overflow-hidden flex items-center justify-center pb-24"
     >
       {/* Heading + Subtext */}
       <div className="absolute top-10 flex flex-col items-center text-center z-[1] px-4 max-w-screen-sm mx-auto">
         <motion.h2
-          className="text-3xl sm:text-5xl font-bold text-slate-700/40 drop-shadow-sm tracking-tight"
+          className="text-3xl sm:text-5xl font-bold text-[#c08b5d] tracking-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
@@ -28,7 +28,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.p
-          className="mt-4 text-base sm:text-xl text-slate-700/50 max-w-md sm:max-w-2xl leading-relaxed drop-shadow-sm tracking-wide"
+          className="mt-4 text-base sm:text-xl text-[#b07c58]  max-w-md sm:max-w-2xl leading-relaxed tracking-wide"
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
@@ -87,7 +87,7 @@ export default function Contact() {
       <div className="absolute top-[50%] -right-[7.5%] sm:right-[35%] sm:left-auto -translate-x-1/2 sm:translate-x-0 z-40">
         <a
           href="mailto:himanshuhim1230@gmail.com"
-          className="text-[#e6dce4] font-semibold text-base sm:text-lg bg-[#f28162] border border-[#fd6a41] rounded-md px-4 py-2"
+          className="text-[#7f4f30] font-semibold text-base sm:text-lg bg-[#ffd9b0] border border-[#ffc499] rounded-md px-4 py-2 shadow-[0_2px_6px_rgba(255,200,150,0.3)] hover:bg-[#ffccaa] transition-all duration-200 ease-out"
         >
           Say Hello
         </a>

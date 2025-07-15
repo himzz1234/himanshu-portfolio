@@ -112,11 +112,11 @@ export default function Projects() {
       />
       <img
         src={bird}
-        className="w-4 sm:w-6 absolute top-[28%] sm:top-[24%] left-[37.5%] sm:left-[32.5%] opacity-60"
+        className="w-4 sm:w-6 absolute top-[28%] sm:top-[23%] left-[37.5%] sm:left-[32%] opacity-60"
       />
 
       {/* Sparkles */}
-      <img
+      {/* <img
         src={sparkle1}
         className="w-2 sm:w-4 opacity-80 absolute top-[10%] left-[40%]"
       />
@@ -131,43 +131,22 @@ export default function Projects() {
       <img
         src={sparkle1}
         className="w-1.5 sm:w-2 opacity-60 absolute bottom-[10%] right-[30%]"
-      />
+      /> */}
 
       {/* Animated Clouds */}
       <motion.img
         src={cloud7}
         alt="cloud"
-        className="absolute top-[10%] left-[10%] w-28 sm:w-44 opacity-25 z-0"
+        className="absolute top-[10%] left-[10%] w-28 sm:w-44 opacity-65 z-0"
         animate={{ x: [0, 20, 0] }}
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
         src={cloud7}
         alt="cloud"
-        className="absolute top-[12.5%] right-[10%] sm:right-[20%] w-24 sm:w-36 opacity-30 z-0"
+        className="absolute top-[12.5%] right-[10%] sm:right-[20%] w-24 sm:w-36 opacity-70 z-0"
         animate={{ x: [0, -15, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.img
-        src={cloud8}
-        alt="cloud"
-        className="absolute top-[60%] left-[15%] sm:left-[20%] w-20 sm:w-28 opacity-45 z-0"
-        animate={{ x: [0, 25, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.img
-        src={cloud7}
-        alt="cloud"
-        className="absolute top-[50%] left-1/2 w-24 sm:w-32 opacity-55 z-0"
-        animate={{ x: [0, -25, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.img
-        src={cloud8}
-        alt="cloud"
-        className="absolute top-[75%] right-[10%] sm:right-[20%] w-24 sm:w-32 opacity-20 z-0"
-        animate={{ x: [0, 25, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
     </section>
   );

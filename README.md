@@ -1,12 +1,32 @@
-# React + Vite
+# 🌤️ Himanshu's Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio, a skybound journey through interactive design, real-time experiences, and a sprinkle of storytelling. This project showcases my work, skills, and passion for building delightful web interfaces.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** (with Vite)
+- **TailwindCSS** for styling
+- **Framer Motion** for animations
+- **TypeScript** (optional)
+- **GitHub Pages** (for hosting)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Features
+
+- ✨ Interactive sections with animations and motion
+- 🌤️ Day/Night mode (toggle available)
+- 🏙️ Thematic design with floating clouds, boards, sparkles
+- 📱 Responsive layout across all screen sizes
+- 📬 Contact section with social links and email button
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-portfolio.git
+cd your-portfolio
+```
