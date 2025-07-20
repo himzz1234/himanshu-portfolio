@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -6,24 +6,48 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import cloud7 from "../assets/images/cloud_7.png";
+import cloud7Dark from "../assets/images/cloud_7_dark.png";
 import cloudLarge from "../assets/images/cloud_large.png";
+import cloudLargeDark from "../assets/images/cloud_large_dark.png";
 import sparkle1 from "../assets/images/sparkle_1.png";
-import sparkle2 from "../assets/images/sparkle_2.png";
 import board3 from "../assets/images/board_3.png";
 import board4 from "../assets/images/board_4.png";
+import { useTheme } from "../context/ThemeContext";
+import { Cloud } from "./visual/Cloud";
+import { Bird } from "./visual/Bird";
+import { birdsConfig, sparkleConfig } from "../config/aboutVisuals";
+import { Sparkle } from "./visual/Sparkle";
 
-export default function About() {
+function About() {
+  const { theme } = useTheme();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
+  const cloudRef = useRef(null);
+  const [cloudHeight, setCloudHeight] = useState(210);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (cloudRef.current) {
+        setCloudHeight(cloudRef.current.offsetHeight);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   const cardControls = useAnimation();
   const boardControls = useAnimation();
 
   useMotionValueEvent(scrollYProgress, "change", async (latest) => {
-    if (latest >= 0.3) {
+    const threshold = window.innerWidth < 640 ? 0.1 : 0.25;
+
+    if (latest >= threshold) {
       await boardControls.start({
         y: "-25%",
         transition: {
@@ -34,7 +58,7 @@ export default function About() {
       });
 
       await boardControls.start({
-        y: "-20%",
+        y: "-30%",
         transition: {
           type: "spring",
           stiffness: 300,
@@ -48,7 +72,7 @@ export default function About() {
       });
     } else {
       await boardControls.start({
-        y: "-80%",
+        y: "-110%",
         transition: { duration: 0.4, ease: "easeOut" },
       });
 
@@ -59,145 +83,160 @@ export default function About() {
     }
   });
 
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   return (
     <div
       ref={ref}
-      className="w-full font-normal overflow-hidden flex justify-center h-screen relative px-4 sm:px-0"
+      className="relative w-full overflow-hidden h-[80vh] sm:h-screen px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20"
     >
-      {/* Clouds */}
-      <motion.img
-        src={cloud7}
-        className="absolute top-[10%] left-[5%] w-24 sm:w-44 opacity-20 z-0"
-        alt="cloud"
-        animate={{ x: [0, 10, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+      <Cloud
+        lightSrc={cloud7}
+        darkSrc={cloud7Dark}
+        className="top-[10%] left-[5%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-20"
+        driftX={10}
+        driftDuration={7.5}
       />
-      <motion.img
-        src={cloud7}
-        className="absolute top-[20%] right-[10%] w-20 sm:w-36 opacity-25 z-0"
-        alt="cloud"
-        animate={{ x: [0, -15, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+
+      <Cloud
+        lightSrc={cloud7}
+        darkSrc={cloud7Dark}
+        className="top-[20%] right-[10%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-25"
+        driftX={-15}
+        driftDuration={5}
       />
-      <motion.img
-        src={cloud7}
-        className="absolute top-[65%] left-[15%] w-16 sm:w-28 opacity-15 z-0"
-        alt="cloud"
-        animate={{ x: [0, 8, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+
+      <Cloud
+        lightSrc={cloud7}
+        darkSrc={cloud7Dark}
+        className="top-[65%] left-[15%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-15"
+        driftX={8}
+        driftDuration={8}
       />
-      <motion.img
-        src={cloud7}
-        className="absolute bottom-[15%] right-[8%] w-20 sm:w-32 opacity-10 z-0"
-        alt="cloud"
-        animate={{ x: [0, -12, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+
+      <Cloud
+        lightSrc={cloud7}
+        darkSrc={cloud7Dark}
+        className="bottom-[15%] right-[8%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-10"
+        driftX={-12}
+        driftDuration={8}
       />
+
+      {birdsConfig.map((b, i) => (
+        <Bird key={i} {...b} animate={false} />
+      ))}
 
       <div
-        style={{
-          backgroundImage: `url(${cloudLarge})`,
-          backgroundPosition: "center",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="absolute -top-36 z-30 w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6"
+        className="relative w-full text-center z-30"
+        style={{ height: `${cloudHeight}px` }}
       >
-        <h2 className="text-xl sm:text-5xl mt-6 font-semibold text-[#6b9ac4] drop-shadow-sm">
-          Hi, I'm Himanshu!
-        </h2>
-
-        <p className="mt-4 text-sm sm:text-xl text-[#6b9ac4] leading-relaxed max-w-sm sm:max-w-xl px-2 sm:px-0">
-          A skybound developer crafting{" "}
-          <span className="font-semibold">playful, real-time</span> experiences
-          with a touch of storytelling. I turn imaginative ideas into meaningful
-          web interfaces that <em>connect, engage, and delight</em>.
-        </p>
-      </div>
-
-      {/* Sparkles */}
-      <img
-        src={sparkle1}
-        className="w-3 sm:w-4 opacity-90 absolute top-[20%] left-[20%]"
-      />
-      <img
-        src={sparkle2}
-        className="w-2.5 sm:w-3 opacity-70 absolute top-[32%] right-[28%]"
-      />
-      <img
-        src={sparkle1}
-        className="w-2.5 sm:w-3 opacity-80 absolute bottom-[10%] left-[25%]"
-      />
-      <img
-        src={sparkle2}
-        className="w-2 opacity-60 absolute bottom-[22%] right-[30%]"
-      />
-      <img
-        src={sparkle1}
-        className="w-2.5 sm:w-3 opacity-60 absolute top-[10%] right-[12%]"
-      />
-      <img
-        src={sparkle2}
-        className="w-2 opacity-50 absolute top-[45%] left-[10%]"
-      />
-
-      {/* Boards - Left */}
-      <div className="absolute top-[50%] sm:top-80 left-1/2 sm:left-96 -translate-x-1/2 sm:translate-x-0 flex flex-col items-center z-20">
-        <motion.img
-          src={board3}
-          alt="Hanging Board"
-          animate={boardControls}
-          initial={{ y: "-85%" }}
-          className="w-48 sm:w-60 h-auto drop-shadow-xl"
+        <img
+          ref={cloudRef}
+          onLoad={() => {
+            if (cloudRef.current) setCloudHeight(cloudRef.current.offsetHeight);
+          }}
+          src={theme === "light" ? cloudLarge : cloudLargeDark}
+          alt="Large Cloud"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full"
         />
 
-        <motion.div
-          animate={cardControls}
-          initial={{ opacity: 0 }}
-          className="font-sans grid grid-cols-2 sm:grid-cols-3 gap-1 -mt-5 text-[#276490] font-medium"
-        >
-          {["React", "Typescript", "Nextjs", "Tailwind"].map((tech, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className={`bg-[#fafafa] text-[#276490] flex items-center justify-center rounded-md px-3 py-2 text-sm ${
-                i === 3 ? "col-span-2 sm:col-span-1 sm:col-start-2" : ""
-              }`}
-            >
-              <p>{tech}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center px-4 sm:px-0 text-center w-full">
+          <h2 className="sr-only">About Me</h2>
+          <h3
+            className="text-lg sm:text-3xl md:text-4xl lg:text-5xl sm:mt-10 font-semibold text-[#6b9ac4] dark:text-sky-700 drop-shadow-sm"
+            aria-hidden="true"
+            d
+          >
+            Who’s in the Basket?
+          </h3>
+
+          <p className="mt-2 text-sm text-[#6b9ac4] dark:text-sky-700 block sm:hidden max-w-[90vw] px-2">
+            Building <span className="font-medium">web magic</span> from HTML to
+            fullstack that <em>connects and delights</em>.
+          </p>
+
+          <p className="hidden sm:block mt-4 sm:text-lg md:text-xl leading-relaxed text-[#6b9ac4] dark:text-sky-700 sm:max-w-xl md:max-w-2xl px-2 sm:px-0">
+            I’m a <span className="font-medium">developer</span> from India who
+            loves turning small ideas into shipped products. From hand‑rolled
+            HTML to fullstack apps, I focus on interfaces that feel fast,
+            accessible, and a little playful.
+          </p>
+        </div>
+
+        {/* Boards - Left */}
+        <div className="absolute top-full left-20 sm:left-[45%] sm:-translate-x-full -translate-x-1/2 flex flex-col items-center -z-20">
+          <motion.img
+            src={board3}
+            alt="Hanging Board"
+            animate={boardControls}
+            initial={{ y: "-110%" }}
+            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom drop-shadow-xl"
+          />
+          <motion.div
+            animate={cardControls}
+            initial={{ opacity: 0 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-1 text-[#276490] md:-mt-5"
+          >
+            {["React", "Typescript", "Nextjs", "Tailwind"].map((tech, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm ${
+                  i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
+                }`}
+              >
+                <p>{tech}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Boards - Right */}
+        <div className="absolute top-full right-20 sm:right-[45%] sm:translate-x-full translate-x-1/2 flex flex-col items-center -z-20">
+          <motion.img
+            src={board4}
+            alt="Hanging Board"
+            animate={boardControls}
+            initial={{ y: "-110%" }}
+            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom drop-shadow-xl"
+          />
+          <motion.div
+            animate={cardControls}
+            initial={{ opacity: 0 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-1 text-[#276490] md:-mt-5"
+          >
+            {["Node.js", "MongoDB", "REST", "Express"].map((tech, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm ${
+                  i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
+                }`}
+              >
+                <p>{tech}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
-      {/* Boards - Right */}
-      <div className="absolute top-[105%] sm:top-80 left-1/2 sm:right-96 -translate-x-1/2 sm:translate-x-0 flex flex-col items-center z-20">
-        <motion.img
-          src={board4}
-          alt="Hanging Board"
-          animate={boardControls}
-          initial={{ y: "-85%" }}
-          className="w-48 sm:w-60 h-auto drop-shadow-xl"
-        />
-
-        <motion.div
-          animate={cardControls}
-          initial={{ opacity: 0 }}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-1 -mt-5 text-[#276490] font-medium"
-        >
-          {["Node.js", "MongoDB", "REST"].map((tech, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-[#fafafa] flex items-center justify-center rounded-md px-3 py-2 text-sm"
-            >
-              <p>{tech}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      {theme === "dark" &&
+        sparkleConfig.map((s) => (
+          <Sparkle
+            key={s.id}
+            src={sparkle1}
+            className={s.className}
+            yKeyframes={s.y}
+            duration={s.dur}
+            reduceMotion={prefersReducedMotion}
+          />
+        ))}
     </div>
   );
 }
+
+export default React.memo(About);

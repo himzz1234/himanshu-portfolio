@@ -50,7 +50,7 @@ export default function ModalProvider({ children }) {
               >
                 <motion.div
                   onClick={(e) => e.stopPropagation()}
-                  className="bg-white/60 backdrop-blur-xl text-[#264D73] px-[5px] py-[30px] rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-white/40 pointer-events-auto"
+                  className="bg-white/60 dark:bg-[#141d2c]/80 backdrop-blur-xl text-[#264D73] px-4 sm:px-8 py-6 sm:py-10 rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-white/40 pointer-events-auto"
                 >
                   {modalContent}
                 </motion.div>

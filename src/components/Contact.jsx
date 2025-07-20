@@ -1,114 +1,130 @@
+import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
-import githubIcon from "../assets/icons/github.png";
-import linkedinIcon from "../assets/icons/linkedin.png";
-import instagramIcon from "../assets/icons/instagram.png";
-import cityline from "../assets/images/cityline.png";
-import grassLeft from "../assets/images/grass_banner_left.png";
-import grassRight from "../assets/images/grass_banner_right.png";
+import cityScape from "../assets/images/cityscape_4.png";
+import cityScapeDark from "../assets/images/cityscape_dark.png";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
+import { useTheme } from "../context/ThemeContext";
 
-export default function Contact() {
+const socials = [
+  {
+    href: "https://github.com/himzz1234",
+    label: "GitHub",
+    Icon: IoLogoGithub,
+    hover: "hover:text-[#5a3a25] dark:hover:text-[#93c5fd]",
+  },
+  {
+    href: "https://www.linkedin.com/in/himanshu-singh-ab19161b2",
+    label: "LinkedIn",
+    Icon: IoLogoLinkedin,
+    hover: "hover:text-[#0a66c2] dark:hover:text-[#3b82f6]",
+  },
+  {
+    href: "https://www.instagram.com/whyhimanshuwhy",
+    label: "Instagram",
+    Icon: IoLogoInstagram,
+    hover: "hover:text-[#e1306c] dark:hover:text-[#f77737]",
+  },
+];
+
+function Contact() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-20% 0px -20% 0px" });
+  const { theme } = useTheme();
+  const isInView = useInView(ref, { once: true, margin: "-15% 0px -10% 0px" });
 
   return (
-    <div
+    <section
+      id="contact"
       ref={ref}
-      className="relative w-full font-sans h-screen bg-gradient-to-b from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9] overflow-hidden flex items-center justify-center pb-24"
+      className="relative w-full font-sans h-[80vh] sm:h-screen overflow-hidden flex flex-col items-center justify-start pt-10
+                 bg-gradient-to-b from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9]
+                 dark:from-[#080e1d] dark:via-[#040815] dark:to-[#000000]"
     >
-      {/* Heading + Subtext */}
-      <div className="absolute top-10 flex flex-col items-center text-center z-[1] px-4 max-w-screen-sm mx-auto">
+      {/* Heading + Copy */}
+      <div className="relative z-[1] w-full max-w-3xl px-6 text-center">
         <motion.h2
-          className="text-3xl sm:text-5xl font-bold text-[#c08b5d] tracking-tight"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#7b4b2d] dark:text-[#e2edff]"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          Let's Connect
+          Let’s Connect
         </motion.h2>
 
         <motion.p
-          className="mt-4 text-base sm:text-xl text-[#b07c58]  max-w-md sm:max-w-2xl leading-relaxed tracking-wide"
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          className="mt-4 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto
+                     text-[#6d4327] dark:text-[#c1d8ff]"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ delay: 0.15, duration: 0.7, ease: "easeOut" }}
         >
-          Thanks for helping me descend safely — now it’s my turn to lift you
-          up. Let’s talk. Whether it’s a spark of an idea, a full-blown project,
-          or just a friendly hello, I’m all ears and ready to float your way.
+          Thanks for riding along. Want to chat, swap ideas, or build something?
+          I’m one message away.
         </motion.p>
       </div>
 
-      {/* Footer Text */}
-      <motion.p
-        className="absolute bottom-4 hidden sm:visible text-sm sm:text-base text-slate-700/50 drop-shadow-sm z-0 text-center px-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-      >
-        Designed & Built by Himanshu Singh
-      </motion.p>
+      <ul className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 absolute left-20 top-[40%] sm:top-[55%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
+        {socials.map(({ href, label, Icon, hover }) => (
+          <li key={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className={`group relative
+              w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14
+              rounded-full flex items-center justify-center
+              bg-[#ffd9b0]/30 dark:bg-[#1f2937]/40 backdrop-blur-sm
+              text-[#7f4f30] dark:text-[#e2e8f0]
+              transition-colors duration-300
+              focus-visible:outline-none focus-visible:ring-4
+              focus-visible:ring-amber-300/40 dark:focus-visible:ring-sky-500/40
+              ${hover}`}
+            >
+              <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
 
-      {/* Social Icons */}
-      <div className="flex items-center justify-center gap-3 sm:space-x-2 absolute left-20 top-[50%] sm:top-[70%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
-        <div>
-          <a
-            href="https://github.com/himzz1234"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src={githubIcon} alt="GitHub" className="w-6 sm:w-8" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://www.linkedin.com/in/himanshu-singh-ab19161b2"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src={linkedinIcon} alt="LinkedIn" className="w-6 sm:w-8" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://www.instagram.com/whyhimanshuwhy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src={instagramIcon} alt="Instagram" className="w-6 sm:w-8" />
-          </a>
-        </div>
-      </div>
+              <span
+                className="absolute opacity-0 group-hover:opacity-100
+               -bottom-8 sm:-bottom-9 md:-bottom-10
+               left-1/2 -translate-x-1/2
+               text-[10px] sm:text-xs md:text-sm
+               text-[#7f4f30] dark:text-[#e2e8f0]
+               bg-[#ffd9b0] dark:bg-[#1f2937]
+               px-2 py-0.5 rounded
+               whitespace-nowrap
+               transition-all duration-300"
+              >
+                {label}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
 
-      {/* Say Hello Button */}
-      <div className="absolute top-[50%] -right-[7.5%] sm:right-[35%] sm:left-auto -translate-x-1/2 sm:translate-x-0 z-40">
+      <div className="absolute top-[30%] sm:top-[50%] right-1/2 sm:right-[35%] sm:left-auto translate-x-1/2 sm:translate-x-0">
         <a
           href="mailto:himanshuhim1230@gmail.com"
-          className="text-[#7f4f30] font-semibold text-base sm:text-lg bg-[#ffd9b0] border border-[#ffc499] rounded-md px-4 py-2 shadow-[0_2px_6px_rgba(255,200,150,0.3)] hover:bg-[#ffccaa] transition-all duration-200 ease-out"
+          className="text-[#7f4f30] dark:text-[#e2e8f0] font-semibold text-sm sm:text-base md:text-lg bg-[#ffd9b0] dark:bg-[#1f2937] border border-[#ffc499] dark:border-[#4b5563] rounded-md px-4 py-2 shadow-[0_2px_6px_rgba(255,200,150,0.3)] dark:shadow-[0_2px_6px_rgba(255,255,255,0.05)] hover:bg-[#ffc894] active:bg-[#fcbf86] dark:hover:bg-[#374151] transition-all duration-200 ease-out"
         >
           Say Hello
         </a>
       </div>
 
-      {/* Cityline */}
-      <div className="absolute right-0 bottom-0 z-[1] w-full sm:w-auto">
+      <div className="absolute inset-x-0 -bottom-5 pointer-events-none select-none">
         <img
-          src={cityline}
-          className="brightness-75 opacity-25 scale-x-[-1] w-[200vw] sm:w-auto"
+          src={theme === "light" ? cityScape : cityScapeDark}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className={`w-full h-[800px] object-cover md:object-fill object-bottom
+            ${
+              theme === "dark"
+                ? "opacity-90 contrast-[1.05] brightness-[0.55] saturate-[1.15]"
+                : "opacity-60 brightness-95"
+            }`}
         />
       </div>
-
-      {/* Grass Banners */}
-      <div className="absolute left-0 -bottom-7.5 z-10 w-full sm:w-auto">
-        <img src={grassLeft} className="w-full sm:w-2/3" />
-      </div>
-
-      <div className="w-full sm:w-auto absolute right-0 -bottom-7.5 z-10">
-        <img src={grassRight} className="w-full sm:w-2/3 ml-auto" />
-      </div>
-    </div>
+    </section>
   );
 }
+
+export default React.memo(Contact);
