@@ -18,6 +18,9 @@ import balloon12Dark from "../assets/images/balloon_12_dark.png";
 import balloon13 from "../assets/images/balloon_13.png";
 import balloon13Dark from "../assets/images/balloon_13_dark.png";
 import balloon14 from "../assets/images/balloon_14.png";
+import balloon16 from "../assets/images/balloon_16.png";
+import balloon17 from "../assets/images/balloon_17.png";
+import balloon18 from "../assets/images/balloon_18.png";
 import balloon14Dark from "../assets/images/balloon_14_dark.png";
 import backgroundBalloon from "../assets/images/background_balloon.png";
 import sparkle1 from "../assets/images/sparkle_1.png";
@@ -39,8 +42,8 @@ const projects = [
     timeline: "2023–2024",
     primaryColor: "#6b5b95",
     pos: "top-[60%] sm:top-1/2 left-[25%] sm:left-[35%] -translate-x-1/2",
-    size: "w-28 sm:w-44",
-    srcLight: balloon12,
+    size: "w-28 sm:w-48",
+    srcLight: balloon18,
     srcDark: balloon12Dark,
     info: {
       description:
@@ -58,7 +61,7 @@ const projects = [
     primaryColor: "#2a9d8f",
     pos: "top-[25%] left-[20%] sm:left-[20%] -translate-x-1/2",
     size: "w-24 sm:w-32",
-    srcLight: balloon14,
+    srcLight: balloon17,
     srcDark: balloon14Dark,
     info: {
       description:
@@ -79,9 +82,9 @@ const projects = [
     title: "SneakPeek",
     timeline: "2024–Present",
     primaryColor: "#e76f51",
-    pos: "top-[30%] right-[20%] sm:right-[30%] translate-x-1/2",
-    size: "w-28 sm:w-40",
-    srcLight: balloon13,
+    pos: "top-[25%] right-[20%] sm:right-[30%] translate-x-1/2",
+    size: "w-28 sm:w-44",
+    srcLight: balloon16,
     srcDark: balloon13Dark,
     info: {
       description:
@@ -270,7 +273,7 @@ function Projects() {
         <Cloud
           lightSrc={cloud7}
           darkSrc={cloud7Dark}
-          className="top-[15%] sm:top-[10%] left-[10%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-90 dark:opacity-45"
+          className="top-[15%] sm:top-[15%] left-[10%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 dark:opacity-45"
           driftX={20}
           driftDuration={5}
           reduceMotion={prefersReducedMotion}

@@ -26,30 +26,58 @@ export default function ProjectBalloon({
     transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
   };
 
+  const hoverCtx = { rest: {}, hover: {} };
+
+  const tipVariants = {
+    rest: { opacity: 0, y: 0 },
+    hover: {
+      opacity: 1,
+      y: -60,
+      transition: { duration: 0.35, ease: "easeOut" },
+    },
+  };
+
   return (
     <motion.div
       ref={ref}
-      className={`relative group w-fit ${className}`}
+      className={`relative w-fit ${className} `}
       variants={baseEntrance}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      <motion.img src={src} alt={title} className="z-10" {...continuousAnim} />
+      <motion.div
+        variants={hoverCtx}
+        initial="rest"
+        whileHover="hover"
+        className="relative w-fit"
+      >
+        <motion.img
+          src={src}
+          alt={title}
+          className="relative z-20"
+          {...continuousAnim}
+        />
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-14 opacity-0 group-hover:opacity-100 whitespace-nowrap flex flex-col items-center transition-opacity duration-300 pointer-events-none">
-        <p
-          style={{ color: primaryColor }}
-          className="text-lg font-medium leading-none"
-        >
-          {timeline}
-        </p>
-        <p
-          style={{ color: primaryColor }}
-          className="text-base leading-tight mt-1"
-        >
-          {title}
-        </p>
-      </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full z-[1] pointer-events-none">
+          <motion.div
+            variants={tipVariants}
+            className="flex flex-col items-center pointer-events-none"
+          >
+            <p
+              style={{ color: primaryColor }}
+              className="text-lg font-medium leading-none"
+            >
+              {timeline}
+            </p>
+            <p
+              style={{ color: primaryColor }}
+              className="text-base leading-tight mt-1"
+            >
+              {title}
+            </p>
+          </motion.div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 }

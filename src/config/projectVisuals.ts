@@ -25,12 +25,12 @@ export const backgroundBalloonsConfig = [
   },
   {
     className:
-      "top-[40%] right-[15%] w-14 sm:w-20 opacity-15 dark:opacity-5 brightness-80 blur-[1px]",
+      "top-[40%] right-[15%] w-14 sm:w-20 opacity-20 dark:opacity-5 brightness-80 blur-[1px]",
     y: [8],
   },
   {
     className:
-      "bottom-[20%] left-[60%] w-10 sm:w-14 opacity-5 brightness-80 blur-[1px]",
+      "bottom-[20%] left-[60%] w-10 sm:w-14 opacity-10 brightness-80 blur-[1px]",
     y: [-6],
   },
 ];
