@@ -19,7 +19,9 @@ import balloon13 from "../assets/images/balloon_13.png";
 import balloon13Dark from "../assets/images/balloon_13_dark.png";
 import balloon14 from "../assets/images/balloon_14.png";
 import balloon16 from "../assets/images/balloon_16.png";
+import balloon16Dark from "../assets/images/balloon_16_dark.png";
 import balloon17 from "../assets/images/balloon_17.png";
+import balloon17Dark from "../assets/images/balloon_17_dark.png";
 import balloon18 from "../assets/images/balloon_18.png";
 import balloon14Dark from "../assets/images/balloon_14_dark.png";
 import backgroundBalloon from "../assets/images/background_balloon.png";
@@ -62,7 +64,7 @@ const projects = [
     pos: "top-[25%] left-[20%] sm:left-[20%] -translate-x-1/2",
     size: "w-24 sm:w-32",
     srcLight: balloon17,
-    srcDark: balloon14Dark,
+    srcDark: balloon17Dark,
     info: {
       description:
         "MERN social platform with live messaging, posts and scalable architecture.",
@@ -83,9 +85,9 @@ const projects = [
     timeline: "2024–Present",
     primaryColor: "#e76f51",
     pos: "top-[25%] right-[20%] sm:right-[30%] translate-x-1/2",
-    size: "w-28 sm:w-44",
+    size: "w-28 sm:w-40",
     srcLight: balloon16,
-    srcDark: balloon13Dark,
+    srcDark: balloon16Dark,
     info: {
       description:
         "Sneaker price comparison aggregator scraping multiple e‑commerce sources.",
@@ -144,6 +146,7 @@ function Projects() {
           description={p.info.description}
           stack={p.info.stack}
           features={p.info.features}
+          primaryColor={p.primaryColor}
           githubLink={p.info.githubLink}
           demoLink={p.info.demoLink}
         />

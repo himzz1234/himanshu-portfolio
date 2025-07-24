@@ -10,8 +10,8 @@ import cloud7Dark from "../assets/images/cloud_7_dark.png";
 import cloudLarge from "../assets/images/cloud_large.png";
 import cloudLargeDark from "../assets/images/cloud_large_dark.png";
 import sparkle1 from "../assets/images/sparkle_1.png";
-import board3 from "../assets/images/board_3.png";
-import board4 from "../assets/images/board_4.png";
+import board3 from "../assets/images/board_9.png";
+import board4 from "../assets/images/board_10.png";
 import { useTheme } from "../context/ThemeContext";
 import { Cloud } from "./visual/Cloud";
 import { Bird } from "./visual/Bird";
@@ -129,7 +129,7 @@ function About() {
       ))}
 
       <div
-        className="relative w-full text-center z-30"
+        className="relative w-full text-center z-50"
         style={{ height: `${cloudHeight}px` }}
       >
         <img
@@ -137,9 +137,9 @@ function About() {
           onLoad={() => {
             if (cloudRef.current) setCloudHeight(cloudRef.current.offsetHeight);
           }}
-          src={theme === "light" ? cloudLarge : cloudLargeDark}
+          src={theme === "light" ? cloudLarge : cloudLarge}
           alt="Large Cloud"
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]"
         />
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center px-4 sm:px-0 text-center w-full">
@@ -184,7 +184,7 @@ function About() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm ${
+                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >
@@ -213,7 +213,7 @@ function About() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm ${
+                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 ztext-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >

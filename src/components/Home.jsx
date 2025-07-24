@@ -131,14 +131,14 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloudBannerLeft}
-        darkSrc={cloudBannerLeftDark}
+        darkSrc={cloudBannerLeft}
         className="bottom-0 left-0 z-50
           h-[160px] w-[160px]
           sm:h-[220px] sm:w-[220px]
           md:h-[300px] md:w-[300px]
           lg:h-[400px] lg:w-[400px]
           xl:h-[500px] xl:w-[500px]
-          object-contain object-left-bottom
+          object-contain object-left-bottom dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]
         "
         scrollYProgress={scrollYProgress}
         yRange={["0%", "15%"]}
@@ -147,14 +147,14 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloudBannerRight}
-        darkSrc={cloudBannerRightDark}
+        darkSrc={cloudBannerRight}
         className="bottom-0 right-0 z-50
           h-[160px] w-[160px]
           sm:h-[240px] sm:w-[240px]
           md:h-[320px] md:w-[320px]
           lg:h-[420px] lg:w-[420px]
           xl:h-[500px] xl:w-[500px]
-          object-contain object-right-bottom
+          object-contain object-right-bottom dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]
         "
         scrollYProgress={scrollYProgress}
         yRange={["0%", "15%"]}

@@ -8,6 +8,7 @@ export default function ProjectInfo({
   description,
   stack = [],
   features = [],
+  primaryColor,
   demoLink,
   githubLink,
 }) {
@@ -23,17 +24,19 @@ export default function ProjectInfo({
     exit: { height: 0, opacity: 0 },
   };
 
+  console.log(primaryColor);
+
   return (
     <div className="text-[#2B4C6F] dark:text-[#e0e0e0] font-body px-2 sm:px-6">
       {/* Title Board */}
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-60 md:w-72 lg:w-80 h-16 sm:h-20 md:h-24 lg:h-28 flex items-center justify-center">
+      {/* <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-60 md:w-72 lg:w-80 h-16 sm:h-20 md:h-24 lg:h-28 flex items-center justify-center">
         <img
           src={titleBoard}
           alt="Title Board"
-          className="w-full h-full absolute inset-0 object-contain drop-shadow-2xl"
+          className="w-full h-full absolute inset-0 object-contain drop-shadow-xl"
         />
         <h2
-          className="font-bold font-sans uppercase tracking-tight text-[clamp(1.4rem,4vw,2.4rem)] text-lg sm:text-2xl md:text-3xl lg:text-4xl"
+          className="font-bold font-sans uppercase tracking-tight text-[clamp(1.4rem,4vw,2.4rem)] text-lg sm:text-2xl md:text-3xl lg:text-4xl z-10 text-center"
           style={{
             color: "#3f1f0d",
             mixBlendMode: "multiply",
@@ -42,11 +45,18 @@ export default function ProjectInfo({
         >
           {title}
         </h2>
-      </div>
+      </div> */}
 
-      <div className="pt-10">
+      <div>
+        <h2
+          style={{ color: "#1E3A8A" }}
+          className="uppercase text-center text-xl md:text-2xl lg:text-3xl tracking-tight font-sans font-bold backdrop-blur-md rounded-xl p-4 bg-white/30 dark:bg-[#141d2c]/50"
+        >
+          {title}
+        </h2>
+
         {/* Description */}
-        <p className="text-base sm:text-lg tracking-tight font-medium backdrop-blur-md rounded-xl p-4 bg-white/30 dark:bg-[#141d2c]/50">
+        <p className="text-base mt-5 sm:text-lg text-[#2D3748] tracking-tight font-medium backdrop-blur-md rounded-xl p-4 bg-white/30 dark:bg-[#141d2c]/50">
           {description}
         </p>
 
@@ -94,10 +104,10 @@ export default function ProjectInfo({
         {/* Side-by-side on larger screens */}
         <div className="hidden sm:grid sm:grid-cols-2 gap-4 mt-5 text-base">
           <div className="bg-white/50 dark:bg-[#141d2c]/50 backdrop-blur-lg p-3 rounded-xl">
-            <h4 className="font-bold text-lg text-[#38477e] dark:text-[#e0e0e0]">
+            <h4 className="font-bold text-lg text-[#1A202C] dark:text-[#e0e0e0]">
               Tech Stack
             </h4>
-            <ul className="mt-2 list-inside space-y-1 dark:text-gray-400">
+            <ul className="mt-2 list-inside space-y-1 text-[#4A5568] dark:text-gray-400">
               {stack.map((tech, i) => (
                 <li key={i}>{tech}</li>
               ))}
@@ -105,10 +115,10 @@ export default function ProjectInfo({
           </div>
 
           <div className="bg-white/50 dark:bg-[#141d2c]/50 backdrop-blur-lg p-3 rounded-xl">
-            <h4 className="font-bold text-lg text-[#38477e] dark:text-[#e0e0e0]">
+            <h4 className="font-bold text-lg text-[#1A202C] dark:text-[#e0e0e0]">
               Key Features
             </h4>
-            <ul className="mt-2 list-inside space-y-1 dark:text-gray-400">
+            <ul className="mt-2 list-inside space-y-1 text-[#4A5568] dark:text-gray-400">
               {features.map((feature, i) => (
                 <li key={i}>{feature}</li>
               ))}
@@ -124,7 +134,7 @@ export default function ProjectInfo({
                   href={demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/50 dark:bg-[#141d2c]/70 backdrop-blur-lg px-4 py-2 rounded-lg font-semibold hover:bg-[#38477e] hover:text-white dark:hover:bg-[#4a68a1] transition text-[#1a1a1a] dark:text-white"
+                  className="bg-white/50 dark:bg-[#141d2c]/70 backdrop-blur-lg px-4 py-2 rounded-lg font-semibold hover:bg-[#3182CE] hover:text-white dark:hover:bg-[#4a68a1] transition text-[#1a1a1a] dark:text-white"
                 >
                   Live Demo
                 </a>
@@ -136,7 +146,7 @@ export default function ProjectInfo({
                   rel="noopener noreferrer"
                   className="font-semibold"
                 >
-                  <div className="bg-white/50 dark:bg-[#141d2c]/70 backdrop-blur-lg flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-[#38477e] hover:text-white dark:hover:bg-[#4a68a1] transition text-[#1a1a1a] dark:text-white">
+                  <div className="bg-white/50 dark:bg-[#141d2c]/70 backdrop-blur-lg flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-[#3182CE] hover:text-white dark:hover:bg-[#4a68a1] transition text-[#1a1a1a] dark:text-white">
                     <IoLogoGithub size={18} />
                     <span>Github</span>
                   </div>

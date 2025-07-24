@@ -109,16 +109,16 @@ function Contact() {
         </a>
       </div>
 
-      <div className="absolute inset-x-0 -bottom-5 pointer-events-none select-none">
+      <div className="absolute inset-x-0 -bottom-10 pointer-events-none select-none mx-auto">
         <img
           src={theme === "light" ? cityScape : cityScapeDark}
           alt=""
           aria-hidden="true"
           loading="lazy"
-          className={`w-full h-[800px] object-cover md:object-fill object-bottom
+          className={`w-full h-[800px] object-repeat object-cover sm:object-fill object-bottom
             ${
               theme === "dark"
-                ? "opacity-90 contrast-[1.05] brightness-[0.55] saturate-[1.15]"
+                ? "opacity-60 brightness-95"
                 : "opacity-60 brightness-95"
             }`}
         />

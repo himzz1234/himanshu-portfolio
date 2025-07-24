@@ -98,30 +98,30 @@ export default function App() {
         </motion.div>
       </motion.div>
 
-      {/* <div className="fixed top-6 right-6 z-[999] hover:scale-110 transition-transform duration-200">
+      <div className="fixed top-6 right-6 z-[999] hover:scale-110 transition-transform duration-200">
         <ThemeToggle />
-      </div> */}
+      </div>
 
       <section
         className="min-h-[50vh] sm:min-h-screen bg-gradient-to-b
-  from-[#4db8ff] via-[#89d4ff] to-[#b3dfff] 
-  dark:from-[#000b1c] dark:via-[#011a35] dark:to-[#013350]"
+  from-[#4db8ff] via-[#89d4ff] to-[#b3dfff]
+  dark:from-[#000814] dark:via-[#001d3d] dark:to-[#003566]"
       >
         <Home />
       </section>
 
       <section
         className="min-h-[60vh] sm:min-h-screen bg-gradient-to-b
-  from-[#b3dfff] via-[#d6edff] to-[#eaf6ff] 
-  dark:from-[#013350] dark:via-[#022a55] dark:to-[#031f3a]"
+  from-[#b3dfff] via-[#d6edff] to-[#eaf6ff]
+  dark:from-[#003566] dark:via-[#00264d] dark:to-[#031f3a]"
       >
         <About />
       </section>
 
       <section
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
-  from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc] 
-  dark:from-[#031f3a] dark:via-[#05152f] dark:to-[#080e1d]"
+  from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc]
+  dark:from-[#031f3a] dark:via-[#12142d] dark:to-[#080e1d]"
       >
         <Projects />
       </section>
@@ -129,8 +129,8 @@ export default function App() {
       <section
         ref={contactRef}
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
-  from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9] 
-  dark:from-[#080e1d] dark:via-[#040815] dark:to-[#000000]"
+  from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9]
+  dark:from-[#080e1d] dark:via-[#040615] dark:to-[#000000]"
       >
         <Contact />
       </section>
