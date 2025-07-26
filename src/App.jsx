@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import "./App.css";
 import About from "./components/About";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
@@ -59,7 +58,7 @@ export default function App() {
   });
 
   return (
-    <main className="relative fredoka" ref={mainRef}>
+    <main className="relative" ref={mainRef}>
       <motion.div
         ref={balloonRef}
         className="absolute left-1/2 -translate-x-1/2 z-5"
@@ -101,27 +100,26 @@ export default function App() {
       <div className="fixed top-6 right-6 z-[999] hover:scale-110 transition-transform duration-200">
         <ThemeToggle />
       </div>
-
       <section
         className="min-h-[50vh] sm:min-h-screen bg-gradient-to-b
-  from-[#4db8ff] via-[#89d4ff] to-[#b3dfff]
-  dark:from-[#000814] dark:via-[#001d3d] dark:to-[#003566]"
+             from-[#4db8ff] via-[#89d4ff] to-[#b3dfff]
+             dark:from-[#00060e] dark:via-[#011627] dark:to-[#02243b]"
       >
         <Home />
       </section>
 
       <section
         className="min-h-[60vh] sm:min-h-screen bg-gradient-to-b
-  from-[#b3dfff] via-[#d6edff] to-[#eaf6ff]
-  dark:from-[#003566] dark:via-[#00264d] dark:to-[#031f3a]"
+             from-[#b3dfff] via-[#d6edff] to-[#eaf6ff]
+             dark:from-[#02243b] dark:via-[#021c30] dark:to-[#021425]"
       >
         <About />
       </section>
 
       <section
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
-  from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc]
-  dark:from-[#031f3a] dark:via-[#12142d] dark:to-[#080e1d]"
+             from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc]
+             dark:from-[#021425] dark:via-[#01101b] dark:to-[#000a12]"
       >
         <Projects />
       </section>
@@ -129,8 +127,8 @@ export default function App() {
       <section
         ref={contactRef}
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
-  from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9]
-  dark:from-[#080e1d] dark:via-[#040615] dark:to-[#000000]"
+             from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9]
+             dark:from-[#000a12] dark:via-[#000714] dark:to-[#2a2a2a]"
       >
         <Contact />
       </section>

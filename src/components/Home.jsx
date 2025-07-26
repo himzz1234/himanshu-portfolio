@@ -46,20 +46,20 @@ export default function Home() {
         {/* Single semantic h1 */}
         <h1 className="relative mb-4">
           <motion.span
-            className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-blue-50 dark:text-blue-200 italic eb-garamond sm:mb-2"
+            className="block font-eb-garamond font-bold italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-50 dark:text-blue-200 sm:mb-1"
             style={!prefersReducedMotion ? { x: translateLeft } : undefined}
           >
             The Adventures of
           </motion.span>
           <motion.span
-            className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white dark:text-blue-100 drop-shadow-md"
+            className="block font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter font-bold text-white dark:text-blue-100"
             style={!prefersReducedMotion ? { x: translateRight } : undefined}
           >
             HIMANSHU
           </motion.span>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-blue-50 dark:text-blue-200"
+            className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal font-body text-blue-50/90 dark:text-blue-200"
             initial={!prefersReducedMotion ? { opacity: 0 } : false}
             animate={!prefersReducedMotion ? { opacity: 1 } : undefined}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -84,7 +84,7 @@ export default function Home() {
             className="absolute left-1/2 -translate-x-1/2"
           >
             <motion.p
-              className="mt-10 font-sans sm:mt-14 md:mt-16 text-sm md:text-base lg:text-lg font-medium text-white/80 dark:text-blue-300"
+              className="mt-10 text-sm md:text-base lg:text-lg font-medium font-serif italic tracking-wide text-white/80 dark:text-blue-300"
               style={{ opacity }}
             >
               Scroll for the journey

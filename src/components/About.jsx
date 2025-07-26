@@ -124,9 +124,8 @@ function About() {
         driftDuration={8}
       />
 
-      {birdsConfig.map((b, i) => (
-        <Bird key={i} {...b} animate={false} />
-      ))}
+      {theme === "light" &&
+        birdsConfig.map((b, i) => <Bird key={i} {...b} animate={false} />)}
 
       <div
         className="relative w-full text-center z-50"
@@ -145,19 +144,19 @@ function About() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center px-4 sm:px-0 text-center w-full">
           <h2 className="sr-only">About Me</h2>
           <h3
-            className="text-lg sm:text-3xl md:text-4xl lg:text-5xl sm:mt-10 font-semibold text-[#6b9ac4] dark:text-sky-700 drop-shadow-sm"
+            style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)" }}
+            className="font-heading text-lg sm:text-3xl md:text-4xl lg:text-5xl sm:mt-10 font-semibold text-[#6b9ac4] dark:text-sky-700 drop-shadow-sm"
             aria-hidden="true"
-            d
           >
             Who’s in the Basket?
           </h3>
 
-          <p className="mt-2 text-sm text-[#6b9ac4] dark:text-sky-700 block sm:hidden max-w-[90vw] px-2">
+          <p className="font-body font-light mt-2 text-sm text-[#427FA3] dark:text-sky-700 block sm:hidden max-w-[90vw] px-2">
             Building <span className="font-medium">web magic</span> from HTML to
             fullstack that <em>connects and delights</em>.
           </p>
 
-          <p className="hidden sm:block mt-4 sm:text-lg md:text-xl leading-relaxed text-[#6b9ac4] dark:text-sky-700 sm:max-w-xl md:max-w-2xl px-2 sm:px-0">
+          <p className="font-body font-light hidden sm:block mt-4 sm:text-lg md:text-xl leading-relaxed text-[#427FA3] dark:text-sky-700 sm:max-w-xl md:max-w-2xl px-2 sm:px-0">
             I’m a <span className="font-medium">developer</span> from India who
             loves turning small ideas into shipped products. From hand‑rolled
             HTML to fullstack apps, I focus on interfaces that feel fast,
@@ -184,7 +183,7 @@ function About() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 text-sm md:text-base ${
+                className={`font-body font-medium tracking-wide bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm sm:rounded-md px-3 py-2 text-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >
@@ -213,7 +212,7 @@ function About() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-semibold bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm px-3 py-2 ztext-sm md:text-base ${
+                className={`font-body font-medium tracking-wide border bg-[#fafafa] text-[#276490] dark:bg-[#0f2f4b] dark:text-[#a8d4ff] border-[#c2dfff] dark:border-[#1c456c] flex items-center justify-center rounded-sm sm:rounded-md px-3 py-2 text-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >

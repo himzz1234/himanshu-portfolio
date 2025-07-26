@@ -2,26 +2,96 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
 body::-webkit-scrollbar {
   width: 0px;
 }
 
-.fredoka {
+/* .fredoka {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
-}
+} */
 
-.eb-garamond {
+.font-eb-garamond {
   font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
 }
 
 .font-body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-optical-sizing: auto;
 }
 
 .font-heading {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Canela", serif;
   font-optical-sizing: auto;
 }
