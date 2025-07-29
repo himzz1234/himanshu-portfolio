@@ -6,9 +6,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import cloud7 from "../assets/images/cloud_7.png";
-import cloud7Dark from "../assets/images/cloud_7_dark.png";
 import cloudLarge from "../assets/images/cloud_large.png";
-import cloudLargeDark from "../assets/images/cloud_large_dark.png";
 import sparkle1 from "../assets/images/sparkle_1.png";
 import board3 from "../assets/images/board_9.png";
 import board4 from "../assets/images/board_10.png";
@@ -94,32 +92,32 @@ function About() {
     >
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7Dark}
-        className="top-[10%] left-[5%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-20"
+        darkSrc={cloud7}
+        className="top-[10%] left-[5%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-20 dark:opacity-10 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={10}
         driftDuration={7.5}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7Dark}
-        className="top-[20%] right-[10%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-25"
+        darkSrc={cloud7}
+        className="top-[20%] right-[10%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-15}
         driftDuration={5}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7Dark}
-        className="top-[65%] left-[15%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-15"
+        darkSrc={cloud7}
+        className="top-[65%] left-[15%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-15 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={8}
         driftDuration={8}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7Dark}
-        className="bottom-[15%] right-[8%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-10"
+        darkSrc={cloud7}
+        className="bottom-[15%] right-[8%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-10 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-12}
         driftDuration={8}
       />
@@ -171,7 +169,7 @@ function About() {
             alt="Hanging Board"
             animate={boardControls}
             initial={{ y: "-110%" }}
-            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom drop-shadow-xl"
+            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
           />
           <motion.div
             animate={cardControls}
@@ -200,7 +198,7 @@ function About() {
             alt="Hanging Board"
             animate={boardControls}
             initial={{ y: "-110%" }}
-            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom drop-shadow-xl"
+            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
           />
           <motion.div
             animate={cardControls}

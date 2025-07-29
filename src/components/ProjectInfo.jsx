@@ -26,25 +26,6 @@ export default function ProjectInfo({
 
   return (
     <div className="text-[#2B4C6F] dark:text-[#e0e0e0] font-body px-2 sm:px-6">
-      {/* Title Board */}
-      {/* <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-60 md:w-72 lg:w-80 h-16 sm:h-20 md:h-24 lg:h-28 flex items-center justify-center">
-        <img
-          src={titleBoard}
-          alt="Title Board"
-          className="w-full h-full absolute inset-0 object-contain drop-shadow-xl"
-        />
-        <h2
-          className="font-bold font-sans uppercase tracking-tight text-[clamp(1.4rem,4vw,2.4rem)] text-lg sm:text-2xl md:text-3xl lg:text-4xl z-10 text-center"
-          style={{
-            color: "#3f1f0d",
-            mixBlendMode: "multiply",
-            opacity: 0.9,
-          }}
-        >
-          {title}
-        </h2>
-      </div> */}
-
       <div>
         <h2 className="text-center font-heading text-2xl sm:text-3xl md:text-4xl tracking-wide font-semibold leading-snug text-[#1E3A8A] dark:text-blue-100">
           {title}
@@ -63,7 +44,7 @@ export default function ProjectInfo({
           ].map(({ key, label, data }) => (
             <div
               key={key}
-              className="bg-white/50 dark:bg-[#141d2c]/50 backdrop-blur-lg rounded-xl overflow-hidden"
+              className="bg-white/50 dark:bg-[#141d2c]/50 dark:border dark:border-white/10 backdrop-blur-lg rounded-xl overflow-hidden"
             >
               <button
                 className="w-full px-4 py-2 font-body font-semibold tracking-wide text-base flex justify-between items-center text-[#38477e] dark:text-[#e0e0e0]"
@@ -98,7 +79,7 @@ export default function ProjectInfo({
 
         {/* Side-by-side on larger screens */}
         <div className="hidden sm:grid sm:grid-cols-2 gap-4 mt-5 text-base">
-          <div className="bg-white/50 dark:bg-[#141d2c]/50 backdrop-blur-lg p-3 rounded-xl">
+          <div className="bg-white/50 dark:bg-[#141d2c]/50 dark:border dark:border-white/10 backdrop-blur-lg p-3 rounded-xl">
             <h4 className="font-body font-semibold text-lg tracking-wide text-[#1A202C] dark:text-[#e0e0e0]">
               Tech Stack
             </h4>
@@ -114,7 +95,7 @@ export default function ProjectInfo({
             </ul>
           </div>
 
-          <div className="bg-white/50 dark:bg-[#141d2c]/50 backdrop-blur-lg p-3 rounded-xl">
+          <div className="bg-white/50 dark:bg-[#141d2c]/50 dark:border dark:border-white/10 backdrop-blur-lg p-3 rounded-xl">
             <h4 className="font-body font-semibold text-lg tracking-wide text-[#1A202C] dark:text-[#e0e0e0]">
               Key Features
             </h4>

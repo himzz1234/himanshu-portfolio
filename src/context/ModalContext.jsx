@@ -35,7 +35,7 @@ export default function ModalProvider({ children }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={closeModal}
-              className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#d5ecff]/50 to-[#e9f4ff]/50 backdrop-blur-sm"
+              className="fixed inset-0 z-[9999] backdrop-blur-sm bg-gradient-to-b from-[#d5ecff]/50 to-[#e9f4ff]/50 dark:from-[#051428]/70 dark:to-[#10223a]/70"
             />
 
             <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none">

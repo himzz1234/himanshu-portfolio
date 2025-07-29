@@ -6,9 +6,16 @@ import Contact from "./components/Contact";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import balloonImg from "./assets/images/balloon.png";
 import ThemeToggle from "./components/ThemeToggle";
+import AudioToggle from "./components/AudioToggle";
+
+const getYValue = () =>
+  window.matchMedia("(max-width: 640px)").matches ? "35%" : "10%";
 
 export default function App() {
-  const [y, setY] = useState("10%");
+  const [y, setY] = useState(() =>
+    typeof window !== "undefined" ? getYValue() : "10%"
+  );
+
   const [scrollComplete, setScrollComplete] = useState(false);
   const { scrollY } = useScroll();
   const mainRef = useRef(null);
@@ -18,6 +25,12 @@ export default function App() {
 
   const [contactTop, setContactTop] = useState(0);
   const [contactHeight, setContactHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setY(getYValue());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const calculateMaxScroll = () => {
@@ -92,14 +105,16 @@ export default function App() {
           <img
             src={balloonImg}
             alt="Balloon"
-            className="w-28 sm:w-36 md:w-44 drop-shadow-2xl"
+            className="w-28 sm:w-36 md:w-44 drop-shadow-2xl dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.15)] dark:brightness-120 dark:saturate-110"
           />
         </motion.div>
       </motion.div>
 
-      <div className="fixed top-6 right-6 z-[999] hover:scale-110 transition-transform duration-200">
+      <div className="flex items-center gap-2 sm:gap-3 fixed top-6 right-6 z-[999]">
+        {/* <AudioToggle /> */}
         <ThemeToggle />
       </div>
+
       <section
         className="min-h-[50vh] sm:min-h-screen bg-gradient-to-b
              from-[#4db8ff] via-[#89d4ff] to-[#b3dfff]
@@ -119,7 +134,8 @@ export default function App() {
       <section
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
              from-[#eaf6ff] via-[#fff5ec] to-[#fff0dc]
-             dark:from-[#021425] dark:via-[#01101b] dark:to-[#000a12]"
+             dark:from-[#021425] dark:via-[#01101b] dark:to-[#0a1b29]  /* was #000a12 */
+"
       >
         <Projects />
       </section>
@@ -128,7 +144,10 @@ export default function App() {
         ref={contactRef}
         className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b
              from-[#fff0dc] via-[#ffe8c7] to-[#ffe2b9]
-             dark:from-[#000a12] dark:via-[#000714] dark:to-[#2a2a2a]"
+             dark:from-[#0a1b29]  /* was #000a12 */
+             dark:via-[#081622]   /* was #000714 */
+             dark:to-[#333c45]    /* was #2a2a2a */
+"
       >
         <Contact />
       </section>

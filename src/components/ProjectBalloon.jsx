@@ -54,7 +54,7 @@ export default function ProjectBalloon({
         <motion.img
           src={src}
           alt={title}
-          className="relative z-20"
+          className="relative z-20 dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.15)] dark:brightness-120 dark:saturate-110"
           {...continuousAnim}
         />
 
@@ -64,14 +64,15 @@ export default function ProjectBalloon({
             className="flex flex-col items-center pointer-events-none"
           >
             <p
+              className="text-sm sm:text-base font-body font-medium leading-none tracking-wide dark:!text-[#FAFAFA]"
               style={{ color: primaryColor }}
-              className="text-lg font-medium leading-none"
             >
               {timeline}
             </p>
+
             <p
+              className="text-lg sm:text-xl font-heading italic leading-snug mt-1 dark:!text-[#FAFAFA]"
               style={{ color: primaryColor }}
-              className="text-base leading-tight mt-1"
             >
               {title}
             </p>

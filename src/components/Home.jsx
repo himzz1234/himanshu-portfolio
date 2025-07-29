@@ -1,29 +1,31 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import cloud8 from "../assets/images/cloud_8.png";
-import cloud8Dark from "../assets/images/cloud_8_dark.png";
 import cloud7 from "../assets/images/cloud_7.png";
-import cloud7Dark from "../assets/images/cloud_7_dark.png";
 import cloudBannerLeft from "../assets/images/cloud_banner_left.png";
-import cloudBannerLeftDark from "../assets/images/cloud_banner_left_dark.png";
 import cloudBannerRight from "../assets/images/cloud_banner_right.png";
-import cloudBannerRightDark from "../assets/images/cloud_banner_right_dark.png";
 import { useTheme } from "../context/ThemeContext";
 import sparkle1 from "../assets/images/sparkle_1.png";
 import { Cloud } from "./visual/Cloud";
 import { sparkleConfigs } from "../config/heroVisuals";
 import { Sparkle } from "./visual/Sparkle";
+import { useAudio } from "../context/AudioContext";
 
 export default function Home() {
   const containerRef = useRef(null);
   const { theme } = useTheme();
+  const { playTrack } = useAudio();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
+
+  useEffect(() => {
+    playTrack("/audios/wind.wav");
+  }, []);
 
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const translateLeft = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
@@ -109,8 +111,8 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloud8}
-        darkSrc={cloud8Dark}
-        className="top-10 right-[10%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-25 dark:opacity-20"
+        darkSrc={cloud8}
+        className="top-10 right-[15%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={10}
         driftDuration={6}
         scrollYProgress={scrollYProgress}
@@ -120,8 +122,8 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7Dark}
-        className="top-[30%] left-[10%] w-16 sm:w-24 md:w-28 lg:w-32 xl:w-36 opacity-30 dark:opacity-20"
+        darkSrc={cloud7}
+        className="top-[30%] left-[10%] w-16 sm:w-24 md:w-28 lg:w-32 xl:w-36 opacity-30 dark:opacity-20 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-10}
         driftDuration={5}
         scrollYProgress={scrollYProgress}

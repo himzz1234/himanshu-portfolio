@@ -1,7 +1,7 @@
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "motion/react";
-import sun from "../assets/icons/sun.png";
-import moon from "../assets/icons/moon.png";
+import { FiSun } from "react-icons/fi";
+import { IoMdMoon } from "react-icons/io";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -9,7 +9,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 cursor-pointer outline-none bg-white dark:bg-sky-900 rounded-full flex items-center justify-center transition-colors duration-300"
+      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 hover:scale-110 cursor-pointer outline-none bg-white dark:bg-white/10 backdrop-blur-sm
+        ring-1 ring-inset ring-white/30 dark:ring-white/20
+        transition-all duration-200 rounded-full flex items-center justify-center"
       aria-label="Toggle theme"
     >
       <motion.div
@@ -19,9 +21,15 @@ export default function ThemeToggle() {
         transition={{ type: "spring", stiffness: 300 }}
       >
         {theme === "light" ? (
-          <img src={sun} className="w-6 h-6" />
+          <FiSun
+            color="#f7bd02"
+            className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
+          />
         ) : (
-          <img src={moon} className="w-6 h-6" />
+          <IoMdMoon
+            color="white"
+            className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
+          />
         )}
       </motion.div>
     </button>
