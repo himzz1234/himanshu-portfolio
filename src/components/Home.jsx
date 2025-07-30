@@ -39,7 +39,7 @@ export default function Home() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative w-full overflow-hidden flex justify-center items-center h-[80vh] sm:h-screen px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20"
+      className="relative w-full overflow-hidden flex justify-center items-center h-screen sm:h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20"
     >
       <motion.div
         className="absolute top-[55%] left-1/2 -translate-x-1/2 text-center w-full max-w-[90vw] sm:max-w-none"
@@ -111,7 +111,6 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloud8}
-        darkSrc={cloud8}
         className="top-10 right-[15%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={10}
         driftDuration={6}
@@ -122,7 +121,6 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7}
         className="top-[30%] left-[10%] w-16 sm:w-24 md:w-28 lg:w-32 xl:w-36 opacity-30 dark:opacity-20 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-10}
         driftDuration={5}
@@ -133,7 +131,6 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloudBannerLeft}
-        darkSrc={cloudBannerLeft}
         className="bottom-0 left-0 z-50
           h-[160px] w-[160px]
           sm:h-[220px] sm:w-[220px]
@@ -149,7 +146,6 @@ export default function Home() {
 
       <Cloud
         lightSrc={cloudBannerRight}
-        darkSrc={cloudBannerRight}
         className="bottom-0 right-0 z-50
           h-[160px] w-[160px]
           sm:h-[240px] sm:w-[240px]

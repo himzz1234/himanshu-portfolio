@@ -43,7 +43,7 @@ function About() {
   const boardControls = useAnimation();
 
   useMotionValueEvent(scrollYProgress, "change", async (latest) => {
-    const threshold = window.innerWidth < 640 ? 0.1 : 0.25;
+    const threshold = window.innerWidth < 640 ? 0.05 : 0.25;
 
     if (latest >= threshold) {
       await boardControls.start({
@@ -88,36 +88,32 @@ function About() {
   return (
     <div
       ref={ref}
-      className="relative w-full overflow-hidden h-[80vh] sm:h-screen px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20"
+      className="relative w-full overflow-hidden h-[50vh] sm:h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20"
     >
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7}
-        className="top-[10%] left-[5%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-20 dark:opacity-10 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
+        className="hidden xs:block top-[10%] left-[5%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-20 dark:opacity-10 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={10}
         driftDuration={7.5}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7}
-        className="top-[20%] right-[10%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
+        className="hidden xs:block top-[20%] right-[10%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-15}
         driftDuration={5}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7}
-        className="top-[65%] left-[15%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-15 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
+        className="hidden xs:block top-[65%] left-[15%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-15 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={8}
         driftDuration={8}
       />
 
       <Cloud
         lightSrc={cloud7}
-        darkSrc={cloud7}
-        className="bottom-[15%] right-[8%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-10 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
+        className="hidden xs:block bottom-[15%] right-[8%] w-20 sm:w-28 md:w-32 lg:w-36 opacity-10 dark:opacity-5 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
         driftX={-12}
         driftDuration={8}
       />
@@ -136,27 +132,28 @@ function About() {
           }}
           src={theme === "light" ? cloudLarge : cloudLarge}
           alt="Large Cloud"
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(900px,100%)] sm:w-[80%] md:w-[70%] max-w-full dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]"
         />
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center px-4 sm:px-0 text-center w-full">
           <h2 className="sr-only">About Me</h2>
           <h3
             style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)" }}
-            className="font-heading text-lg sm:text-3xl md:text-4xl lg:text-5xl sm:mt-10 font-semibold text-[#6b9ac4] dark:text-sky-700 drop-shadow-sm"
+            className="font-heading text-base sm:text-3xl md:text-4xl lg:text-5xl mt-4 sm:mt-10 font-semibold text-[#6b9ac4] dark:text-sky-700 sm:drop-shadow-sm"
             aria-hidden="true"
           >
             Who’s in the Basket?
           </h3>
 
-          <p className="font-body font-light mt-2 text-sm text-[#427FA3] dark:text-sky-700 block sm:hidden max-w-[90vw] px-2">
-            Building <span className="font-medium">web magic</span> from HTML to
-            fullstack that <em>connects and delights</em>.
+          <p className="font-body font-light mt-2 text-xs text-[#427FA3] dark:text-sky-700 block sm:hidden max-w-[90vw] px-2">
+            Developer from India crafting playful web magic from hand rolled
+            HTML to full stack apps that connects, delights, and stays lightning
+            fast.
           </p>
 
           <p className="font-body font-light hidden sm:block mt-4 sm:text-lg md:text-xl leading-relaxed text-[#427FA3] dark:text-sky-700 sm:max-w-xl md:max-w-2xl px-2 sm:px-0">
             I’m a <span className="font-medium">developer</span> from India who
-            loves turning small ideas into shipped products. From hand‑rolled
+            loves turning small ideas into shipped products. From hand rolled
             HTML to fullstack apps, I focus on interfaces that feel fast,
             accessible, and a little playful.
           </p>
@@ -169,19 +166,19 @@ function About() {
             alt="Hanging Board"
             animate={boardControls}
             initial={{ y: "-110%" }}
-            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
+            className="w-28 h-16 xs:w-32 xs:h-18 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
           />
           <motion.div
             animate={cardControls}
             initial={{ opacity: 0 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-1 text-[#276490] md:-mt-5"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-2 text-[#276490] md:-mt-3"
           >
             {["React", "Typescript", "Nextjs", "Tailwind"].map((tech, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-medium tracking-wide bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm sm:rounded-md px-3 py-2 text-sm md:text-base ${
+                className={`font-body font-medium tracking-wide bg-[#fafafa] text-[#276490] dark:bg-[#1a3a5a] dark:text-[#a8d4ff] border border-[#c2dfff] dark:border-[#2a4a6a] flex items-center justify-center rounded-sm sm:rounded-md px-2 py-1.5 text-xs xs:text-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >
@@ -198,19 +195,19 @@ function About() {
             alt="Hanging Board"
             animate={boardControls}
             initial={{ y: "-110%" }}
-            className="w-36 h-20 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
+            className="w-28 h-16 xs:w-32 xs:h-18 sm:w-52 sm:h-auto object-cover sm:object-contain object-bottom"
           />
           <motion.div
             animate={cardControls}
             initial={{ opacity: 0 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-1 text-[#276490] md:-mt-5"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-2 text-[#276490] md:-mt-3"
           >
             {["Node.js", "MongoDB", "REST", "Express"].map((tech, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`font-body font-medium tracking-wide border bg-[#fafafa] text-[#276490] dark:bg-[#0f2f4b] dark:text-[#a8d4ff] border-[#c2dfff] dark:border-[#1c456c] flex items-center justify-center rounded-sm sm:rounded-md px-3 py-2 text-sm md:text-base ${
+                className={`font-body font-medium tracking-wide border bg-[#fafafa] text-[#276490] dark:bg-[#0f2f4b] dark:text-[#a8d4ff] border-[#c2dfff] dark:border-[#1c456c] flex items-center justify-center rounded-sm sm:rounded-md px-2 py-1.5 text-xs xs:text-sm md:text-base ${
                   i === 3 ? "col-span-1 sm:col-span-1 sm:col-start-2" : ""
                 }`}
               >

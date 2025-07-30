@@ -58,7 +58,7 @@ export default function ProjectBalloon({
           {...continuousAnim}
         />
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full z-[1] pointer-events-none">
+        <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-full z-[1] pointer-events-none">
           <motion.div
             variants={tipVariants}
             className="flex flex-col items-center pointer-events-none"

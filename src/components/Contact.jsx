@@ -43,7 +43,7 @@ function Contact() {
     <section
       id="contact"
       ref={containerRef}
-      className="relative w-full font-body h-[80vh] sm:h-screen overflow-hidden flex flex-col items-center justify-start pt-10"
+      className="relative w-full font-body h-[80vh] sm:h-screen overflow-hidden flex flex-col items-center justify-start pt-8"
     >
       {/* Heading + Copy */}
       <div className="relative z-[1] w-full max-w-3xl px-6 text-center">
@@ -55,13 +55,13 @@ function Contact() {
           variants={headingVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading tracking-tight text-[#7b4b2d] dark:text-[#e2edff]"
+          className="text-2xl sm:text-4xl md:text-5xl font-bold font-heading tracking-tight text-[#7b4b2d] dark:text-[#e2edff]"
         >
           Let’s Connect
         </motion.h2>
 
         <motion.p
-          className="font-light mt-4 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto
+          className="font-light mt-3 text-xs sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto
                      text-[#6d4327] dark:text-[#c1d8ff]"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -72,7 +72,7 @@ function Contact() {
         </motion.p>
       </div>
 
-      <ul className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 absolute left-20 top-[40%] sm:top-[55%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
+      <ul className="flex flex-row items-center justify-center gap-1 sm:gap-2 absolute left-1/2 top-[80%] sm:top-[55%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
         {socials.map(({ href, label, Icon, hover }) => (
           <li key={label}>
             <a
@@ -81,7 +81,7 @@ function Contact() {
               rel="noopener noreferrer"
               aria-label={label}
               className={`group relative
-              w-11 h-11 sm:w-12 sm:h-12
+              w-10 h-10 sm:w-12 sm:h-12
               rounded-full flex items-center justify-center
               bg-[#ffd9b0]/30 dark:bg-[#1f2937]/40 backdrop-blur-sm
               text-[#7f4f30] dark:text-[#e2e8f0]
@@ -94,7 +94,7 @@ function Contact() {
 
               <span
                 className="absolute opacity-0 group-hover:opacity-100
-               -bottom-8 sm:-bottom-9
+               -bottom-7 sm:-bottom-9
                left-1/2 -translate-x-1/2
                text-[10px] sm:text-xs md:text-sm
                text-[#7f4f30] dark:text-[#e2e8f0]
@@ -110,7 +110,7 @@ function Contact() {
         ))}
       </ul>
 
-      <div className="absolute top-[30%] sm:top-[50%] right-1/2 sm:right-[35%] sm:left-auto translate-x-1/2 sm:translate-x-0">
+      <div className="absolute top-[28%] sm:top-[50%] right-1/2 sm:right-[35%] sm:left-auto translate-x-1/2 sm:translate-x-0">
         <a
           href="mailto:himanshuhim1230@gmail.com"
           className="text-[#7f4f30] dark:text-[#e2e8f0] font-medium text-sm sm:text-base md:text-lg bg-[#ffd9b0] dark:bg-[#1f2937] border border-[#ffc499] dark:border-[#4b5563] rounded-md px-4 py-2 shadow-[0_2px_6px_rgba(255,200,150,0.3)] dark:shadow-[0_2px_6px_rgba(255,255,255,0.05)] hover:bg-[#ffc894] active:bg-[#fcbf86] dark:hover:bg-[#374151] transition-all duration-200 ease-out"
@@ -125,7 +125,7 @@ function Contact() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          className={`w-full h-[800px] object-repeat object-cover sm:object-fill object-bottom
+          className={`w-full h-[620px] sm:h-[800px] object-repeat object-cover sm:object-fill object-bottom
             ${
               theme === "dark"
                 ? "opacity-60 brightness-[8%]"
@@ -141,7 +141,7 @@ function Contact() {
             alt=""
             aria-hidden="true"
             loading="lazy"
-            className={`w-full h-[800px] object-repeat object-cover sm:object-fill object-bottom opacity-70`}
+            className={`w-full h-[620px] sm:h-[800px] object-repeat object-cover sm:object-fill object-bottom opacity-70`}
           />
         </div>
       )}

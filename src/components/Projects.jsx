@@ -28,13 +28,17 @@ import { Bird } from "./visual/Bird";
 import { Sparkle } from "./visual/Sparkle";
 import { Cloud } from "./visual/Cloud";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
 const projects = [
   {
     key: "swadsathi",
     title: "SwadSathi",
     timeline: "2023–2024",
     primaryColor: "#6b5b95",
-    pos: "top-[60%] sm:top-1/2 left-[25%] sm:left-[35%] -translate-x-1/2",
+    pos: !isMobile
+      ? "top-[60%] sm:top-1/2 left-[25%] sm:left-[35%] -translate-x-1/2"
+      : "top-[20%] left-1/2 -translate-x-1/2",
     size: "w-28 sm:w-48",
     srcLight: balloon18,
     srcDark: balloon18,
@@ -52,8 +56,10 @@ const projects = [
     title: "Connect",
     timeline: "2022–2023",
     primaryColor: "#2a9d8f",
-    pos: "top-[25%] left-[20%] sm:left-[20%] -translate-x-1/2",
-    size: "w-24 sm:w-32",
+    pos: !isMobile
+      ? "top-[25%] left-[20%] sm:left-[20%] -translate-x-1/2"
+      : "top-[45%] left-1/2 -translate-x-1/2",
+    size: "w-28 sm:w-32",
     srcLight: balloon17,
     srcDark: balloon17,
     info: {
@@ -75,7 +81,9 @@ const projects = [
     title: "SneakPeek",
     timeline: "2024–Present",
     primaryColor: "#e76f51",
-    pos: "top-[25%] right-[20%] sm:right-[30%] translate-x-1/2",
+    pos: !isMobile
+      ? "top-[25%] right-[20%] sm:right-[30%] translate-x-1/2"
+      : "top-[70%] left-1/2 -translate-x-1/2",
     size: "w-28 sm:w-40",
     srcLight: balloon16,
     srcDark: balloon16,
@@ -154,7 +162,7 @@ function Projects() {
       ref={containerRef}
       id="projects"
       aria-labelledby="projectsHeading"
-      className="relative w-full overflow-hidden flex justify-center h-[80vh] sm:h-screen"
+      className="relative w-full overflow-hidden flex justify-center h-screen"
     >
       {/* Heading */}
       <div className="absolute top-[4%] sm:top-[6%] md:left-1/2 md:-translate-x-1/2 flex flex-col items-center text-center px-4 pointer-events-none">
@@ -166,7 +174,7 @@ function Projects() {
           variants={headingVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="font-heading text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#336F94] dark:text-[#e2edff]"
+          className="font-heading text-xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#336F94] dark:text-[#e2edff]"
         >
           The Balloon Fleet
         </motion.h3>
@@ -175,7 +183,7 @@ function Projects() {
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
           transition={{ delay: 0.25, duration: 0.75 }}
-          className="mt-1 font-body md:mt-3 text-sm sm:text-lg md:text-xl text-[#427FA3] dark:text-[#c1d8ff] max-w-md sm:max-w-xl md:max-w-2xl leading-relaxed font-light italic px-2"
+          className="mt-1 font-body md:mt-3 text-xs sm:text-lg md:text-xl text-[#427FA3] dark:text-[#c1d8ff] max-w-md sm:max-w-xl md:max-w-2xl leading-relaxed font-light italic px-2"
         >
           Selected work & experiments
         </motion.p>
@@ -266,7 +274,6 @@ function Projects() {
       >
         <Cloud
           lightSrc={cloud7}
-          darkSrc={cloud7}
           className="top-[15%] sm:top-[15%] left-[10%] w-12 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-25 dark:opacity-15 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
           driftX={20}
           driftDuration={5}
@@ -275,7 +282,6 @@ function Projects() {
 
         <Cloud
           lightSrc={cloud7}
-          darkSrc={cloud7}
           className="top-[12.5%] right-[10%] sm:right-[20%] w-16 sm:w-24 md:w-28 lg:w-32 xl:w-36 opacity-80 dark:opacity-10 dark:brightness-150 dark:contrast-125 dark:mix-blend-screen"
           driftX={-15}
           driftDuration={7.5}
