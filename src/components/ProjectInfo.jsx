@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { IoLogoGithub, IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { AnimatePresence, motion } from "motion/react";
-import titleBoard from "../assets/images/title_board_1.png";
 
 export default function ProjectInfo({
   title,
   description,
   stack = [],
   features = [],
-  primaryColor,
   demoLink,
   githubLink,
 }) {

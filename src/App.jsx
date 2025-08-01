@@ -105,7 +105,7 @@ export default function App() {
           <img
             src={balloonImg}
             alt="Balloon"
-            className="w-28 sm:w-36 md:w-44 drop-shadow-2xl dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.15)] dark:brightness-120 dark:saturate-110"
+            className="w-28 sm:w-36 md:w-40 lg:w-44 drop-shadow-2xl dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.15)] dark:brightness-120 dark:saturate-110"
           />
         </motion.div>
       </motion.div>
@@ -124,7 +124,7 @@ export default function App() {
       </section>
 
       <section
-        className="min-h-[60vh] sm:min-h-screen bg-gradient-to-b
+        className="min-h-[50vh] sm:min-h-screen bg-gradient-to-b
              from-[#b3dfff] via-[#d6edff] to-[#eaf6ff]
              dark:from-[#02243b] dark:via-[#021c30] dark:to-[#021425]"
       >

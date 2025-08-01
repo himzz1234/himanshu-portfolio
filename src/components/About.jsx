@@ -7,9 +7,9 @@ import {
 } from "motion/react";
 import cloud7 from "../assets/images/cloud_7.png";
 import cloudLarge from "../assets/images/cloud_large.png";
-import sparkle1 from "../assets/images/sparkle_1.png";
-import board3 from "../assets/images/board_9.png";
-import board4 from "../assets/images/board_10.png";
+import sparkle1 from "../assets/images/sparkle_star_1.png";
+import board3 from "../assets/images/board_frontend.png";
+import board4 from "../assets/images/board_backend.png";
 import { useTheme } from "../context/ThemeContext";
 import { Cloud } from "./visual/Cloud";
 import { Bird } from "./visual/Bird";
@@ -132,7 +132,7 @@ function About() {
           }}
           src={theme === "light" ? cloudLarge : cloudLarge}
           alt="Large Cloud"
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(900px,100%)] sm:w-[80%] md:w-[70%] max-w-full dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]"
+          className="absolute top-0 left-1/2 -translate-x-1/2 lg:w-[min(900px,100%)] w-[100%] max-w-full dark:brightness-[.75] dark:contrast-[1.22] dark:hue-rotate-[215deg] dark:saturate-[0]"
         />
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center px-4 sm:px-0 text-center w-full">

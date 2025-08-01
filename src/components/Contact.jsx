@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import cityScape from "../assets/images/cityscape_4.png";
-import cityScapeDark from "../assets/images/cityscape_4_dark_2.png";
+import cityScape from "../assets/images/cityscape_day.png";
+import cityScapeDark from "../assets/images/cityscape_night.png";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
 import { useTheme } from "../context/ThemeContext";
 
@@ -72,7 +72,7 @@ function Contact() {
         </motion.p>
       </div>
 
-      <ul className="flex flex-row items-center justify-center gap-1 sm:gap-2 absolute left-1/2 top-[80%] sm:top-[55%] sm:left-[40%] sm:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
+      <ul className="flex flex-row items-center justify-center gap-1 sm:gap-2 absolute left-1/2 top-[80%] lg:top-[55%] lg:left-[40%] lg:translate-x-[-50%] translate-x-[-50%] translate-y-1/2 z-50">
         {socials.map(({ href, label, Icon, hover }) => (
           <li key={label}>
             <a
@@ -110,7 +110,7 @@ function Contact() {
         ))}
       </ul>
 
-      <div className="absolute top-[28%] sm:top-[50%] right-1/2 sm:right-[35%] sm:left-auto translate-x-1/2 sm:translate-x-0">
+      <div className="absolute top-[28%] lg:top-[50%] right-1/2 lg:right-[35%] lg:left-auto translate-x-1/2 lg:translate-x-0">
         <a
           href="mailto:himanshuhim1230@gmail.com"
           className="text-[#7f4f30] dark:text-[#e2e8f0] font-medium text-sm sm:text-base md:text-lg bg-[#ffd9b0] dark:bg-[#1f2937] border border-[#ffc499] dark:border-[#4b5563] rounded-md px-4 py-2 shadow-[0_2px_6px_rgba(255,200,150,0.3)] dark:shadow-[0_2px_6px_rgba(255,255,255,0.05)] hover:bg-[#ffc894] active:bg-[#fcbf86] dark:hover:bg-[#374151] transition-all duration-200 ease-out"
@@ -125,7 +125,7 @@ function Contact() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          className={`w-full h-[620px] sm:h-[800px] object-repeat object-cover sm:object-fill object-bottom
+          className={`w-full h-[620px] md:h-[720px] lg:h-[800px] object-repeat object-cover lg:object-fill object-bottom
             ${
               theme === "dark"
                 ? "opacity-60 brightness-[8%]"
@@ -141,7 +141,7 @@ function Contact() {
             alt=""
             aria-hidden="true"
             loading="lazy"
-            className={`w-full h-[620px] sm:h-[800px] object-repeat object-cover sm:object-fill object-bottom opacity-70`}
+            className={`w-full h-[620px] md:h-[720px] lg:h-[800px] object-repeat object-cover lg:object-fill object-bottom opacity-70`}
           />
         </div>
       )}

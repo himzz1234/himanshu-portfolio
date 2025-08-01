@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import birdImg from "../../assets/images/bird.png";
+import birdImg from "../../assets/images/bird_flying.png";
 
 export function Bird({ className, flip = false, opacity = 0.4 }) {
   return (

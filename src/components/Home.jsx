@@ -7,7 +7,7 @@ import cloud7 from "../assets/images/cloud_7.png";
 import cloudBannerLeft from "../assets/images/cloud_banner_left.png";
 import cloudBannerRight from "../assets/images/cloud_banner_right.png";
 import { useTheme } from "../context/ThemeContext";
-import sparkle1 from "../assets/images/sparkle_1.png";
+import sparkle1 from "../assets/images/sparkle_star_1.png";
 import { Cloud } from "./visual/Cloud";
 import { sparkleConfigs } from "../config/heroVisuals";
 import { Sparkle } from "./visual/Sparkle";

@@ -13,11 +13,11 @@ import { useModal } from "../context/ModalContext";
 import { useTheme } from "../context/ThemeContext";
 
 // Assets
-import balloon16 from "../assets/images/balloon_16.png";
-import balloon17 from "../assets/images/balloon_17.png";
-import balloon18 from "../assets/images/balloon_18.png";
-import backgroundBalloon from "../assets/images/background_balloon.png";
-import sparkle1 from "../assets/images/sparkle_1.png";
+import balloonSneakPeek from "../assets/images/balloon_sneakpeek.png";
+import balloonConnect from "../assets/images/balloon_connect.png";
+import balloonSwadSathi from "../assets/images/balloon_swadsathi.png";
+import balloonBackground from "../assets/images/balloon_background.png";
+import sparkle1 from "../assets/images/sparkle_star_1.png";
 import cloud7 from "../assets/images/cloud_7.png";
 import {
   backgroundBalloonsConfig,
@@ -40,8 +40,8 @@ const projects = [
       ? "top-[60%] sm:top-1/2 left-[25%] sm:left-[35%] -translate-x-1/2"
       : "top-[20%] left-1/2 -translate-x-1/2",
     size: "w-28 sm:w-48",
-    srcLight: balloon18,
-    srcDark: balloon18,
+    srcLight: balloonSwadSathi,
+    srcDark: balloonSwadSathi,
     info: {
       description:
         "Real-time canteen ordering to cut queues. Students place & track, staff manage live.",
@@ -60,8 +60,8 @@ const projects = [
       ? "top-[25%] left-[20%] sm:left-[20%] -translate-x-1/2"
       : "top-[45%] left-1/2 -translate-x-1/2",
     size: "w-28 sm:w-32",
-    srcLight: balloon17,
-    srcDark: balloon17,
+    srcLight: balloonConnect,
+    srcDark: balloonConnect,
     info: {
       description:
         "MERN social platform with live messaging, posts and scalable architecture.",
@@ -85,8 +85,8 @@ const projects = [
       ? "top-[25%] right-[20%] sm:right-[30%] translate-x-1/2"
       : "top-[70%] left-1/2 -translate-x-1/2",
     size: "w-28 sm:w-40",
-    srcLight: balloon16,
-    srcDark: balloon16,
+    srcLight: balloonSneakPeek,
+    srcDark: balloonSneakPeek,
     info: {
       description:
         "Sneaker price comparison aggregator scraping multiple e commerce sources.",
@@ -297,7 +297,7 @@ function Projects() {
         {backgroundBalloonsConfig.map((b, i) => (
           <motion.img
             key={i}
-            src={backgroundBalloon}
+            src={balloonBackground}
             alt=""
             aria-hidden="true"
             className={`absolute ${b.className}`}
